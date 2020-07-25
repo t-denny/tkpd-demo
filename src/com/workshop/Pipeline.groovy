@@ -9,6 +9,8 @@ class Pipeline {
    String docker_user
    String app_port
    String pr_num
+   String dockerTool
+   String docker_registry
  
    Pipeline(
        String repository_name,
@@ -16,7 +18,9 @@ class Pipeline {
        String git_user,
        String docker_user,
        String app_port,
-       String pr_num
+       String pr_num,
+       String dockerTool,
+       String docker_registry
    ){
        this.repository_name = repository_name
        this.branch_name = branch_name
@@ -24,6 +28,8 @@ class Pipeline {
        this.docker_user = docker_user
        this.app_port = app_port
        this.pr_num = pr_num
+       this.dockerTool = dockerTool
+       this.docker_registry = docker_registry
    }
  
 }
