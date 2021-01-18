@@ -38,7 +38,7 @@ func ping(c echo.Context) error {
 }
 
 func call(c echo.Context) error {
-  return c.String(http.StatusOK, "ring ring!")
+  return c.String(http.StatusOK, "ring ring!!")
 }
 
 func server(c echo.Context) error {
