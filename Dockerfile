@@ -18,8 +18,8 @@ FROM dimaskiddo/alpine:base
 WORKDIR /app
 
 # copy assets from builder
-COPY --from=builder /usr/src/app/github.com/tobapramudia/tkpd-demo/tkpd-demo ./
-COPY --from=builder /usr/src/app/github.com/tobapramudia/tkpd-demo/docker-entrypoint.sh ./
+COPY --from=builder /usr/src/go/src/github.com/tobapramudia/tkpd-demo/tkpd-demo ./
+COPY --from=builder /usr/src/go/src/github.com/tobapramudia/tkpd-demo/docker-entrypoint.sh ./
 
 # healthcheck
 HEALTHCHECK --interval=5s --timeout=1s \
