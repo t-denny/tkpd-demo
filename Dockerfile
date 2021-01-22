@@ -25,13 +25,13 @@ COPY --from=builder /usr/src/app/github.com/tobapramudia/tkpd-demo/docker-entryp
 HEALTHCHECK --interval=5s --timeout=1s \
   CMD curl -H 'User-Agent: local_health_check' -f http://127.0.0.1:1323/ping || exit 1
 
-## running as user (disable root on service)
+# running as user (disable root on service)
 USER user
 
-## port listen
+# port listen
 EXPOSE 1323
 
-## add entrypoint
+# add entrypoint
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
 
 # exec service
