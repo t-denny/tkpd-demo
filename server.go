@@ -33,7 +33,7 @@ func hello(c echo.Context) error {
 }
 
 func ping(c echo.Context) error {
-  return c.String(http.StatusOK, "pong!!")
+  return c.String(http.StatusOK, "pong!")
 }
 
 func server(c echo.Context) error {
