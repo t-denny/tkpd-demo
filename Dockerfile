@@ -1,5 +1,5 @@
 # use onbuild go image from Dockerfile.onbuild
-FROM dimaskiddo/tokpedia-workshop:onbuild as builder
+FROM dimaskiddo/tkpd-demo:onbuild as builder
 
 # set base path
 WORKDIR $GOPATH/src/github.com/tobapramudia/tkpd-demo
@@ -10,6 +10,7 @@ COPY . ./
 # get dependencies library & build the app
 RUN go get -v \
     && go build -o tkpd-demo .
+
 
 # use prebuild go image with indonesia timezone
 FROM dimaskiddo/alpine:base
