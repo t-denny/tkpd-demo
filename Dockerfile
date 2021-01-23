@@ -25,7 +25,7 @@ COPY --from=builder /usr/src/go/src/github.com/tobapramudia/tkpd-demo/docker-ent
 # make sure directory is writeable
 RUN chmod 775 . \
     && chmod 775 docker-entrypoint.sh \
-    && chmod 775 tokpd-demo 
+    && chmod 775 tkpd-demo
 
 # healthcheck
 HEALTHCHECK --interval=5s --timeout=1s \
