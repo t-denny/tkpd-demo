@@ -9,7 +9,7 @@ COPY . ./
 
 # get dependencies library & build the app
 RUN go get -v \
-    && go build -o tkpd-demo .
+    && go build -o tkpd-demo . \
     && chmod 755 docker-entrypoint.sh
 
 
