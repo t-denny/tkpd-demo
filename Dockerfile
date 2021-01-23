@@ -9,8 +9,7 @@ COPY . ./
 
 # get dependencies library & build the app
 RUN go get -v \
-    && go build -o tkpd-demo . \
-    && chmod 755 docker-entrypoint.sh
+    && go build -o tkpd-demo .
 
 
 # use prebuild go image with indonesia timezone
@@ -22,6 +21,11 @@ WORKDIR /app
 # copy assets from builder
 COPY --from=builder /usr/src/go/src/github.com/tobapramudia/tkpd-demo/tkpd-demo ./
 COPY --from=builder /usr/src/go/src/github.com/tobapramudia/tkpd-demo/docker-entrypoint.sh ./
+
+# make sure directory is writeable
+RUN chmod 775 . \
+    && chmod 775 docker-entrypoint.sh \
+    && chmod 775 tokpd-demo 
 
 # healthcheck
 HEALTHCHECK --interval=5s --timeout=1s \
