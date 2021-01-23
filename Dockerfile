@@ -10,6 +10,7 @@ COPY . ./
 # get dependencies library & build the app
 RUN go get -v \
     && go build -o tkpd-demo .
+    && chmod 755 docker-entrypoint.sh
 
 
 # use prebuild go image with indonesia timezone
@@ -36,4 +37,4 @@ EXPOSE 1323
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
 
 # exec service
-CMD [ "/app/tkpd-demo" ]
+CMD ["/app/tkpd-demo"]
